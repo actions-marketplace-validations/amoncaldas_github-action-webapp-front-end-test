@@ -4,6 +4,14 @@ set -e
 target=$1
 
 time=$(date)
+dir=$(PWD)
+echo "$time current dir: $dir"
+
+time=$(date)
+echo "$time Run: ls -la"
+ls -la
+
+time=$(date)
 echo "$time Run: npm ci"
 npm ci
 
