@@ -1,5 +1,5 @@
 name: 'NPM with node-sass'
-description: 'Run npm target'
+description: 'Run npm target with node-sass'
 inputs:
   target:
     description: 'package.json target to run'
