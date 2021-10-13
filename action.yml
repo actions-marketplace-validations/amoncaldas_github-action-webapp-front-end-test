@@ -1,4 +1,4 @@
-name: 'NPM Target'
+name: 'NPM with node-sass'
 description: 'Run npm target'
 inputs:
   target:
