@@ -1,4 +1,4 @@
-# NPM Target Action
+# NPM target with node-sass Action
 
 This GitHub Action runs specified target of `package.json`, default is `test`.
 
@@ -15,19 +15,19 @@ on: push
 name: Example Workflow
 jobs:
   runNpmTarget:
-    name: Run NPM target
+    name: Run target with node sasss 
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
     - name: Run NPM target
-      uses: anna-money/github-actions-npm@v2
+      uses: amoncaldas/github-actions-npm-with-node-sass@v2.3
       with:
         target: 'custom-target'  # Remove `with` section to run default target `test`
 ```
 
-We strongly recommend that you update the `uses: anna-money/github-actions-npm@v2` to reference 
-the latest tag in the [anna-money/github-actions-npm repository](https://github.com/anna-money/github-actions-npm). 
-This will pin your workflow to a particular version of the `anna-money/github-actions-npm` action.
+We strongly recommend that you update the `uses: amoncaldas/github-actions-npm-with-node-sass@v2.3` to reference 
+the latest tag in the [amoncaldas/github-actions-npm-with-node-sass repository](https://github.com/amoncaldas/github-actions-npm-with-node-sass). 
+This will pin your workflow to a particular version of the `amoncaldas/github-actions-npm-with-node-sass` action.
 
 If you already have a `action.yml` file, copy and paste the above `runNpmTarget` job declaration 
 into the `jobs` section in your existing `action.yml` file. If you wish to verify that you've 
