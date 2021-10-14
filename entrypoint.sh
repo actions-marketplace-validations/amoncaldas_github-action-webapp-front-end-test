@@ -4,14 +4,6 @@ set -e
 target=$1
 
 time=$(date)
-echo "$time Run: ls -la"
-ls -la
-
-time=$(date)
-echo "$time Run: printenv"
-printenv
-
-time=$(date)
 echo "$time Run: npm ci"
 npm ci
 
