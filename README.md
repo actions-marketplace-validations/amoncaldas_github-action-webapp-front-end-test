@@ -20,12 +20,12 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Run NPM target
-      uses: amoncaldas/github-actions-npm-with-node-sass@v2.6
+      uses: amoncaldas/github-actions-npm-with-node-sass@v2.7
       with:
         target: 'custom-target'  # Remove `with` section to run default target `test`
 ```
 
-We strongly recommend that you update the `uses: amoncaldas/github-actions-npm-with-node-sass@v2.6` to reference 
+We strongly recommend that you update the `uses: amoncaldas/github-actions-npm-with-node-sass@v2.7` to reference 
 the latest tag in the [amoncaldas/github-actions-npm-with-node-sass repository](https://github.com/amoncaldas/github-actions-npm-with-node-sass). 
 This will pin your workflow to a particular version of the `amoncaldas/github-actions-npm-with-node-sass` action.
 
