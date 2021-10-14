@@ -1,5 +1,5 @@
-name: 'NPM with node-sass'
-description: 'Run npm target with node-sass'
+name: 'Webapp front-end test'
+description: 'Run webapp front-end test'
 inputs:
   target:
     description: 'package.json target to run'
