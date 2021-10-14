@@ -1,5 +1,6 @@
 FROM node:12.14.1-alpine
 RUN apk --no-cache add git
+RUN apk --no-cache add firefox-esr
 
 LABEL com.github.actions.name="NPM Target with node-sass"
 LABEL com.github.actions.description="Run npm target with node-sass."
