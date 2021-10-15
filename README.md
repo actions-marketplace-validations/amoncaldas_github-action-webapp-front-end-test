@@ -1,6 +1,20 @@
-# Test webapp front-end
+# Test webapp front-end with node
 
-This GitHub Action runs specified target present in `package.json`. The default is `test`.
+This GitHub Action provides an evironment for testing web applications with javascript using node commands.
+The environment uses buntu:18.04 and includes:
+- unzip
+- curl 
+- wget 
+- git
+- nodejs
+- npm
+- chrome 
+- firefox
+
+In the entry point it runs:
+- npm ci (equivalent to npm install)
+- npm rebuild node-sass
+- npm run <target> (target present in `package.json`. The default is `test`)
 
 ## Configuration
 
@@ -18,14 +32,14 @@ jobs:
     name: Run webapp front-end test
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v1.1
     - name: Run NPM target
-      uses: amoncaldas/github-action-webapp-front-end-test@v1
+      uses: amoncaldas/github-action-webapp-front-end-test@v1.1
       with:
         target: 'custom-target'  # Remove `with` section to run default target `test`
 ```
 
-We strongly recommend that you update the `uses: amoncaldas/github-actions-npm-with-node-sass@v1` to reference 
+We strongly recommend that you update the `uses: amoncaldas/github-actions-npm-with-node-sass@v1.1` to reference 
 the latest tag in the [amoncaldas/github-action-webapp front-end test repository](https://github.com/amoncaldas/github-action-webapp-front-end-test). 
 This will pin your workflow to a particular version of the `amoncaldas/github-actions-npm-with-node-sass` action.
 
