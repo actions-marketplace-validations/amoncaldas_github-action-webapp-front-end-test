@@ -2,17 +2,11 @@ FROM ubuntu:18.04
 
 # Install chrome and firefox
 RUN apt update \
-  && apt install -y unzip curl wget git make build-essential g++ \
+  && apt install -y unzip gnupg2 curl wget git make build-essential g++ \
   && echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | tee /etc/apt/sources.list.d/google-chrome.list \
   && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
   && apt update \
   && apt install -y google-chrome-stable firefox
-
-# Install wget
-RUN apt-get update && apt-get install wget -y
-
-# Install gnupg and git
-RUN apt-get update && apt-get install -y gnupg2 && apt-get install -y git
 
 # Install NODEJS/NPM
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
