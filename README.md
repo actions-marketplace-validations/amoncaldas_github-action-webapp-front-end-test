@@ -35,7 +35,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1.1
     - name: Run NPM target
-      uses: amoncaldas/github-action-webapp-front-end-test@v1.3
+      uses: amoncaldas/github-action-webapp-front-end-test@v1.4
       with:
         target: 'custom-target'  # Remove `with` section to run default target `test`
 ```
