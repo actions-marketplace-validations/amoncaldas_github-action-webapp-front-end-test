@@ -1,12 +1,17 @@
 FROM ubuntu:18.04
 
 # Install chrome and firefox
+ARG CHROME_VERSION="96.0.4664.45-1"
+  
 RUN apt update \
   && apt install -y unzip gnupg2 curl wget git make build-essential g++ default-jdk \
   && echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | tee /etc/apt/sources.list.d/google-chrome.list \
   && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
   && apt update \
-  && apt install -y google-chrome-stable firefox
+  && apt install -y firefox \
+  && wget -q -O /tmp/chrome.deb https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${CHROME_VERSION}_amd64.deb \
+  && apt install -y /tmp/chrome.deb \
+  && rm /tmp/chrome.deb
 
 # Install NODEJS/NPM
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
